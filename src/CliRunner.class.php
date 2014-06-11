@@ -25,7 +25,8 @@ class CliRunner
 
   function setCliParams(array $argv)
   {
-    $this->command = array_shift(self::parseArgs($argv));
+    $parsedArgs = self::parseArgs($argv);
+    $this->command = array_shift( $parsedArgs);
     $this->params = array_slice(self::parseArgs($argv), 1);
   }
 
